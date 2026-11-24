@@ -1,9 +1,10 @@
 use async_trait::async_trait;
 
-use crate::domain::user::{
-    entity::User,
-    error::UserError,
-    ports::{UserRepository, UserService},
+use crate::modules::user::{
+    domain::entity::User,
+    domain::error::UserError,
+    port::inbound::UserService,
+    port::outbound::UserRepository
 };
 
 pub struct UserServiceImpl<R: UserRepository> {
